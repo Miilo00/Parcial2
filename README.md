@@ -1,12 +1,6 @@
----
-
 # Sistema de Gestión de Seguros
 
 Autor: **Cristian Camilo Vera**
-
-Aplicación de escritorio moderna y minimalista desarrollada en Java bajo una **Arquitectura Hexagonal (Puertos y Adaptadores)**, utilizando **JavaFX** para la interfaz gráfica y una base de datos relacional **MySQL** mediante conectividad **JDBC**.
-
----
 
 ##  Tabla de Contenidos
 
@@ -122,4 +116,5 @@ Sigue estos pasos para poner en marcha la aplicación en tu entorno local:
 ---
 
 * 📐 **Diagrama de Clases y secuencia**: https://drive.google.com/file/d/1gKR5rPjqJ9IrbhRLiNSdlWEjwAekrX8h/view?usp=sharing
-* 🎥 **Video de Demostración**: [Ver Video Explicativo en YouTube / Drive (Enlace de ejemplo)](https://www.google.com/search?q=https://tu-video-demostracion-aqui.com)
+* 🎥 **Video de Demostración**: https://drive.google.com/drive/folders/1fh0w9yemVivlZwUChfPA8B33J9TJmLYK?usp=drive_link
+
