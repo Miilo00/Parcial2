@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #121214;" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.seguros.Infraestructura.UI.SeguroControlador">
+   
+   <!-- PANEL IZQUIERDO: FORMULARIO -->
+   <VBox prefWidth="380.0" spacing="10.0" style="-fx-background-color: #1a1a1e; -fx-padding: 15;">
+      <children>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #b388ff; -fx-font-size: 18px; -fx-font-weight: bold;" text="Gestión de Seguros" />
+         
+         <Label text="Número de Póliza" textFill="#e0e0e0" />
+         <TextField fx:id="txtNumero" promptText="Ej: POL-001" style="-fx-background-color: #2a2a30; -fx-text-fill: white;" />
+         
+         <Label text="Fecha de Expedición" textFill="#e0e0e0" />
+         <DatePicker fx:id="dpFecha" prefWidth="350.0" style="-fx-background-color: #2a2a30;" />
+         
+         <Label text="Valor" textFill="#e0e0e0" />
+         <TextField fx:id="txtValor" promptText="Ej: 150000.0" style="-fx-background-color: #2a2a30; -fx-text-fill: white;" />
+         
+         <Label text="Estado" textFill="#e0e0e0" />
+         <ComboBox fx:id="cbEstado" prefWidth="350.0" promptText="Seleccione estado" style="-fx-background-color: #2a2a30;" />
+         
+         <Label text="Tipo de Seguro" textFill="#e0e0e0" />
+         <ComboBox fx:id="cbTipo" prefWidth="350.0" promptText="Seleccione tipo" style="-fx-background-color: #2a2a30;" />
+         
+         <!-- CAMPOS DINÁMICOS PARA SEGURO DE VIDA -->
+         <VBox fx:id="paneVida" spacing="10.0">
+            <children>
+               <Label text="Nombre del Beneficiario" textFill="#e0e0e0" />
+               <TextField fx:id="txtBeneficiario" promptText="Ej: María López" style="-fx-background-color: #2a2a30; -fx-text-fill: white;" />
+               
+               <Label text="Parentesco" textFill="#e0e0e0" />
+               <TextField fx:id="txtParentesco" promptText="Ej: Hijo, Cónyuge" style="-fx-background-color: #2a2a30; -fx-text-fill: white;" />
+            </children>
+         </VBox>
+
+         <!-- CAMPOS DINÁMICOS PARA SEGURO DE VEHÍCULO -->
+         <VBox fx:id="paneVehiculo" spacing="10.0">
+            <children>
+               <Label text="Marca del Vehículo" textFill="#e0e0e0" />
+               <TextField fx:id="txtMarca" promptText="Ej: Chevrolet, Mazda" style="-fx-background-color: #2a2a30; -fx-text-fill: white;" />
+            </children>
+         </VBox>
+         
+         <Label text="Asegurado" textFill="#e0e0e0" />
+         <ComboBox fx:id="cbAsegurado" prefWidth="350.0" promptText="Seleccione asegurado" style="-fx-background-color: #2a2a30;" />
+         
+         <!-- 4 BOTONES -->
+         <HBox spacing="8.0" style="-fx-padding: 5 0 0 0;">
+            <children>
+               <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#handleCrear" style="-fx-background-color: #6200ee; -fx-text-fill: white; -fx-font-weight: bold;" text="Crear" />
+               <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#handleEditar" style="-fx-background-color: #3700b3; -fx-text-fill: white; -fx-font-weight: bold;" text="Editar" />
+               <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#handleEliminar" style="-fx-background-color: #b00020; -fx-text-fill: white; -fx-font-weight: bold;" text="Eliminar" />
+               <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#handleLimpiar" style="-fx-background-color: #2a2a30; -fx-text-fill: white; -fx-font-weight: bold;" text="Limpiar" />
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+
+   <!-- PANEL DERECHO: TABLA DE DATOS -->
+   <VBox HBox.hgrow="ALWAYS" style="-fx-padding: 20;">
+      <children>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #e0e0e0; -fx-font-size: 16px; -fx-font-weight: bold;" text="Listado de Seguros Registrados">
+            <VBox.margin>
+               <Insets bottom="10.0" />
+            </VBox.margin>
+         </Text>
+         <TableView fx:id="tablaSeguros" VBox.vgrow="ALWAYS" style="-fx-background-color: #1a1a1e; -fx-text-fill: white;">
+           <columns>
+             <TableColumn fx:id="colNumero" prefWidth="90.0" text="Número" />
+             <TableColumn fx:id="colTipo" prefWidth="90.0" text="Tipo" />
+             <TableColumn fx:id="colAsegurado" prefWidth="130.0" text="Asegurado" />
+             <TableColumn fx:id="colFecha" prefWidth="110.0" text="Fecha Exp." />
+             <TableColumn fx:id="colValor" prefWidth="100.0" text="Valor" />
+             <TableColumn fx:id="colEstado" prefWidth="90.0" text="Estado" />
+             <TableColumn fx:id="colDetalle" prefWidth="180.0" text="Detalle (Beneficiario / Marca)" />
+           </columns>
+         </TableView>
+      </children>
+   </VBox>
+</HBox>

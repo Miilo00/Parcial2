@@ -46,7 +46,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/deapo/Desktop/ojdbc17.jar">
+	<classpathentry kind="lib" path="C:/Users/deapo/Desktop/mysql-connector-j-26.7.0/mysql-connector-j-26.7.0/mysql-connector-j-26.7.0.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

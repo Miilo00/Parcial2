@@ -1,12 +1,14 @@
 module GestionSeguros {
 	requires javafx.graphics;
 	requires javafx.fxml;
-	requires javafx.controls; // Asegúrate de incluir esta línea para los componentes
+	requires javafx.controls;
+	requires java.sql; // Conexión JDBC para la base de datos
 
-	// 1. Permite a JavaFX iniciar tu aplicación (Arregla el error actual)
+	// Permite a JavaFX iniciar tu aplicación
 	exports co.edu.poli.seguros.Vista to javafx.graphics;
 	
-	// 2. Abre todos los paquetes para que FXML y los controladores funcionen sin restricciones
+	// Abre los paquetes necesarios para FXML, UI y la reflexión de la tabla (Dominio)
 	opens co.edu.poli.seguros.Vista to javafx.fxml, javafx.graphics;
 	opens co.edu.poli.seguros.Infraestructura.UI to javafx.fxml, javafx.graphics;
+	opens co.edu.poli.seguros.Dominio to javafx.base;
 }
